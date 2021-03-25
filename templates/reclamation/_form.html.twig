@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+     <table>
+         <tr>
+             <td>Titre</td>
+             <td> {{ form_widget(form.type) }}</td>
+         </tr>
+         <tr>
+             <td>Sujet</td>
+             <td> {{ form_widget(form.description) }}</td>
+         </tr>
+         <tr>
+             <td></td>
+             <td><button class="btn">{{ button_label|default('Sauvegarder') }}</button></td>
+         </tr>
+</table>
+
+{{ form_end(form) }}

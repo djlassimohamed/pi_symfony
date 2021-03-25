@@ -1,0 +1,44 @@
+{% extends 'base_back.html.twig' %}
+{% block body %}
+    <h1>Liste des réclamations</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.type }}</td>
+                <td>{{ reclamation.status }}</td>
+                <td>{{ reclamation.description }}</td>
+                <td>{{ reclamation.date ? reclamation.date|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('reclamation_show_admin', {'id': reclamation.id})  }}"class="btn btn-success">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('reclamation_traiter', {'id': reclamation.id}) }}"class="btn btn-primary">traiter</a>
+                </td>
+                <td>
+                    <a href="{{ path('reclamation_nontraiter', {'id': reclamation.id}) }}"class="btn btn-primary">Non traiter</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune reclamation trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base_back.html.twig' %}
+{% block body %}
+    <h1>InfoUserNutrition index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ojectif</th>
+                <th>Blessure</th>
+                <th>Mangezpas</th>
+                <th>Supplementali</th>
+                <th>Probleme</th>
+                <th>Age</th>
+                <th>Taille</th>
+                <th>Poids</th>
+                <th>Sexe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_user_nutrition in info_user_nutritions %}
+            <tr>
+                <td>{{ info_user_nutrition.id }}</td>
+                <td>{{ info_user_nutrition.ojectif }}</td>
+                <td>{{ info_user_nutrition.blessure }}</td>
+                <td>{{ info_user_nutrition.mangezpas }}</td>
+                <td>{{ info_user_nutrition.supplementali }}</td>
+                <td>{{ info_user_nutrition.probleme }}</td>
+                <td>{{ info_user_nutrition.age }}</td>
+                <td>{{ info_user_nutrition.taille }}</td>
+                <td>{{ info_user_nutrition.poids }}</td>
+                <td>{{ info_user_nutrition.sexe }}</td>
+                <td>
+                    <a href="{{ path('info_user_nutrition_programmer', {'id': info_user_nutrition.id}) }}">Faire un programme</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

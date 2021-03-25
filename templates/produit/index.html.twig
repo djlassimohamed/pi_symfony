@@ -1,0 +1,47 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h1>Liste des produits</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Prix</th>
+                <th>Type</th>
+                <th>Labelle</th>
+                <th>Quantite</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.prix }}</td>
+                    <td>{{ produit.type }}</td>
+                    <td>{{ produit.labelle }}</td>
+                    <td>{{ produit.quantite }}</td>
+                    <td><img src ="{{ asset('uploads/images/' ~ produit.image) }}"
+                             alt =""  width="100" height="100"></td>
+                    <td>
+                    <td>
+                        <a href="{{ path('produit_show', {'id': produit.id}) }}"class="btn btn-success">Afficher</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('produit_edit', {'id': produit.id}) }}"class="btn btn-primary">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucun produit trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+            <a href="{{ path('produit_index_listp')}}"class="btn btn-success">imprimer</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Modification programme{% endblock %}
+
+{% block body %}
+    <h1>Modification programme</h1>
+
+    {{ include('programmenutrition/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('programmenutrition_index') }}">Retour a la list</a>
+
+    {{ include('programmenutrition/_delete_form.html.twig') }}
+{% endblock %}

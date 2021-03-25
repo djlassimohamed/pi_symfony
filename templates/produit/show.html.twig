@@ -1,0 +1,44 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <h1>Produit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ produit.prix }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ produit.type }}</td>
+            </tr>
+            <tr>
+                <th>Labelle</th>
+                <td>{{ produit.labelle }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ produit.quantite }}</td>
+            </tr>
+            <tr>
+                <td><img src ="{{ asset('uploads/images/' ~ produit.image) }}"
+                         alt =""  width="200" height="200"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('produit_index') }}" class="btn btn-success">Retour à la liste</a>
+
+    <a href="{{ path('produit_edit', {'id': produit.id}) }}"class="btn btn-primary">Modifier</a>
+
+    {{ include('produit/_delete_form.html.twig') }}
+    {% endif %}
+{% endblock %}

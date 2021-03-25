@@ -1,0 +1,38 @@
+<ul>
+    <li class="active"><a href="/">Accueil</a></li>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a href="#">Abonnement</a>
+            <ul class="dropdown">
+                <li><a href="/abonnement/nutritionniste">Nutritionnisme</a></li>
+                <li><a href="/abonnement/entrainement">Entrainements</a></li>
+            </ul>
+        </li>
+    {% endif %}
+    <li><a href="/produits">Produits</a></li>
+    <li><a href="/post">Forum</a></li>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li><a href="/chat">Chat</a></li>
+        <li><a href="#">Profile</a>
+            <ul class="dropdown">
+                {% if is_granted("ROLE_ADMIN") %}
+                    <li><a href="/admin">Adminstration</a></li>
+                {% endif %}
+                <li><a href="/panier/produit">Mon panier</a></li>
+                <li><a href="/reclamation">Liste des reclamations</a></li>
+                <li><a href="/reclamation/new">Faire un reclamation</a></li>
+                {% if is_granted("ROLE_COACH") %}
+                    <li><a href="/entrainement/{{ app.user.coach.id }}">Planning d'entrainement</a></li>
+                {% endif %}
+                {% if is_granted("ROLE_NUTRITIONIST") %}
+                    <li><a href="/info/user/nutrition">Demandes de nutrition</a></li>
+                {% endif %}
+                <li><a href="/entrainement/list/coachs">Mes programmes d'entrainement</a></li>
+                <li><a href="/programmenutrition">Mes programmes de nutrition</a></li>
+            </ul>
+        </li>
+        <li><a href="/logout">Déconnecter</a></li>
+    {% else %}
+        <li><a href="/login">Connecter</a></li>
+        <li><a href="/register">Inscription</a></li>
+    {% endif %}
+</ul>

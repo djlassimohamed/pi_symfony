@@ -1,0 +1,47 @@
+{% block body %}
+    <h1>Facture</h1>
+    <h2>Client {{ app.user.prenom }} {{ app.user.nom }}</h2>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <table class="table" border ="1">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix unitaire</th>
+                <th>Quantite</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier_produit in panier %}
+            <tr>
+                <td>{{ panier_produit.produit.labelle }}</td>
+                <td>{{ panier_produit.produit.prix }}</td>
+                <td>{{ panier_produit.quantite }}</td>
+                <td>{{ panier_produit.quantite * panier_produit.produit.prix }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td>Prix Total</td>
+                <td></td>
+                <td></td>
+                <td>{{ prixtotal }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Ajout programme{% endblock %}
+
+{% block body %}
+    <h1>Ajout programme</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ programmenutrition.infoUserNutrition.id }}</td>
+        </tr>
+        <tr>
+            <th>Ojectif</th>
+            <td>{{ programmenutrition.infoUserNutrition.ojectif }}</td>
+        </tr>
+        <tr>
+            <th>Blessure</th>
+            <td>{{ programmenutrition.infoUserNutrition.blessure }}</td>
+        </tr>
+        <tr>
+            <th>Mangezpas</th>
+            <td>{{ programmenutrition.infoUserNutrition.mangezpas }}</td>
+        </tr>
+        <tr>
+            <th>Supplementali</th>
+            <td>{{ programmenutrition.infoUserNutrition.supplementali }}</td>
+        </tr>
+        <tr>
+            <th>Probleme</th>
+            <td>{{ programmenutrition.infoUserNutrition.probleme }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ programmenutrition.infoUserNutrition.age }}</td>
+        </tr>
+        <tr>
+            <th>Taille</th>
+            <td>{{ programmenutrition.infoUserNutrition.taille }}</td>
+        </tr>
+        <tr>
+            <th>Poids</th>
+            <td>{{ programmenutrition.infoUserNutrition.poids }}</td>
+        </tr>
+        <tr>
+            <th>Sexe</th>
+            <td>{{ programmenutrition.infoUserNutrition.sexe }}</td>
+        </tr>
+        </tbody>
+    </table>
+    {{ include('programmenutrition/_form.html.twig') }}
+{% endblock %}

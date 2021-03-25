@@ -1,0 +1,36 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Liste d'entraîneur{% endblock %}
+
+{% block body %}
+    <h1>Liste d'entraîneurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Specialité</th>
+                <th>Salaire</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coach in coaches %}
+            <tr>
+                <td>{{ coach.speciality }}</td>
+                <td>{{ coach.salary }}</td>
+                <td>
+                    <a href="{{ path('coach_show', {'id': coach.id}) }}" class="btn btn-success">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('coach_edit', {'id': coach.id}) }}"class="btn btn-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun entraîneur trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Programme{% endblock %}
+
+{% block body %}
+    <h1>Programme</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ programmenutrition.id }}</td>
+            </tr>
+            <tr>
+                <th>Repas1</th>
+                <td>{{ programmenutrition.repas1 }}</td>
+            </tr>
+            <tr>
+                <th>Repas2</th>
+                <td>{{ programmenutrition.repas2 }}</td>
+            </tr>
+            <tr>
+                <th>Repas3</th>
+                <td>{{ programmenutrition.repas3 }}</td>
+            </tr>
+            <tr>
+                <th>Repas4</th>
+                <td>{{ programmenutrition.repas4 }}</td>
+            </tr>
+            <tr>
+                <th>Repas5</th>
+                <td>{{ programmenutrition.repas5 }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ programmenutrition.duree }}</td>
+            </tr>
+            <tr>
+                <th>Jourrepot</th>
+                <td>{{ programmenutrition.jourrepot }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('programmenutrition_index') }}">back to list</a>
+
+    <a href="{{ path('programmenutrition_edit', {'id': programmenutrition.id}) }}">edit</a>
+
+    {{ include('programmenutrition/_delete_form.html.twig') }}
+{% endblock %}

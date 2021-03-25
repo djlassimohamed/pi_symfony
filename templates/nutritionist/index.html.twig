@@ -1,0 +1,36 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Liste nutritionniste{% endblock %}
+
+{% block body %}
+    <h1>Liste des nutritionnistes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Régime</th>
+                <th>Salaire</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nutritionist in nutritionists %}
+            <tr>
+                <td>{{ nutritionist.diet }}</td>
+                <td>{{ nutritionist.salary }}</td>
+                <td>
+                    <a href="{{ path('nutritionist_show', {'id': nutritionist.id}) }}"class="btn btn-success">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('nutritionist_edit', {'id': nutritionist.id}) }}" class="btn btn-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

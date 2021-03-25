@@ -1,0 +1,35 @@
+{% extends 'base_front.html.twig' %}
+{% block body %}
+    <h1>Mon panier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantite</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier_produit in panier %}
+            <tr>
+                <td>{{ panier_produit.produit.labelle }}</td>
+                <td>{{ panier_produit.quantite }}</td>
+                <td>
+                    <a href="{{ path('panier_produit_show', {'id': panier_produit.id}) }}">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('panier_produit_edit', {'id': panier_produit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Votre panier est vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('panier_produit_commander') }}"class="btn btn-primary">Commander</a>
+    <a href="{{ path('panier_produit_pdf')}}"class="btn btn-success">Imprimer</a>
+{% endblock %}

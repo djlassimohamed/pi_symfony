@@ -1,0 +1,90 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Facture</h1>
+    <h2>Client {{ app.user.prenom }} {{ app.user.nom }}</h2>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <table class="table" border ="1">
+        <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix unitaire</th>
+            <th>Quantite</th>
+            <th>Prix</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for panier_produit in panier %}
+            <tr>
+                <td>{{ panier_produit.produit.labelle }}</td>
+                <td>{{ panier_produit.produit.prix }}</td>
+                <td>{{ panier_produit.quantite }}</td>
+                <td>{{ panier_produit.quantite * panier_produit.produit.prix }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>Prix Total</td>
+            <td></td>
+            <td></td>
+            <td>{{ prixtotal }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button id="checkout-button" class="btn btn-success">Payer</button></td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        // Create an instance of the Stripe object with your publishable API key
+        var stripe = Stripe('pk_test_51ITGcAJXa5XqKKTCxM05F5DKF3XkYN7gi55I7RV7714x82yxJpkTqW84nAOLwkv1vVCK8aRSM5ZhahdgScCw8Qqx00QEl4gP6D');
+        var checkoutButton = document.getElementById('checkout-button');
+
+        checkoutButton.addEventListener('click', function() {
+            // Create a new Checkout Session using the server-side endpoint you
+            // created in step 3.
+            fetch('/create-checkout-session', {
+                method: 'POST',
+            })
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(session) {
+                    return stripe.redirectToCheckout({ sessionId: session.id });
+                })
+                .then(function(result) {
+                    // If `redirectToCheckout` fails due to a browser or network
+                    // error, you should display the localized error message to your
+                    // customer using `error.message`.
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}

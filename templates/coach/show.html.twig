@@ -1,0 +1,30 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Entraîneur{% endblock %}
+
+{% block body %}
+    <h1>Entraîneur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ coach.id }}</td>
+            </tr>
+            <tr>
+                <th>Specialité</th>
+                <td>{{ coach.speciality }}</td>
+            </tr>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ coach.salary }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('coach_index') }}" class="btn btn-success">Retour à la liste</a>
+
+    <a href="{{ path('coach_edit', {'id': coach.id}) }}" class="btn btn-primary">Modifier</a>
+
+    {{ include('coach/_delete_form.html.twig') }}
+{% endblock %}

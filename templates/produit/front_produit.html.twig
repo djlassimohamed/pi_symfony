@@ -1,0 +1,37 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+
+{% block body %}
+    <section class="team-section team-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>TRAIN WITH EXPERTS</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for produit in produits %}
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="ts-item set-bg" data-setbg="{{asset('uploads/images/' ~ produit.image)}}">
+                            <div class="ts_text">
+                                <h4>{{ produit.labelle }}</h4>
+                                <span>{{ produit.prix }} DT</span><br/>
+                                <a href="{{ path('panier_produit_new', {id: produit.id }) }}" class="primary-btn pricing-btn">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+
+                {% else %}
+                    <tr>
+                        <td colspan="6">Aucun produit trouvé</td>
+                    </tr>
+                {% endfor %}
+            </div>
+        </div></section>
+{% endblock %}

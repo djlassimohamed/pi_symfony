@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<title>InfoUserNutrition</title>
+
+{% block body %}
+    <h1>InfoUserNutrition</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info_user_nutrition.id }}</td>
+            </tr>
+            <tr>
+                <th>Ojectif</th>
+                <td>{{ info_user_nutrition.ojectif }}</td>
+            </tr>
+            <tr>
+                <th>Blessure</th>
+                <td>{{ info_user_nutrition.blessure }}</td>
+            </tr>
+            <tr>
+                <th>Mangezpas</th>
+                <td>{{ info_user_nutrition.mangezpas }}</td>
+            </tr>
+            <tr>
+                <th>Supplementali</th>
+                <td>{{ info_user_nutrition.supplementali }}</td>
+            </tr>
+            <tr>
+                <th>Probleme</th>
+                <td>{{ info_user_nutrition.probleme }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ info_user_nutrition.age }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ info_user_nutrition.taille }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ info_user_nutrition.poids }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ info_user_nutrition.sexe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('info_user_nutrition_index') }}">back to list</a>
+
+    <a href="{{ path('info_user_nutrition_edit', {'id': info_user_nutrition.id}) }}">edit</a>
+
+    {{ include('info_user_nutrition/_delete_form.html.twig') }}
+{% endblock %}

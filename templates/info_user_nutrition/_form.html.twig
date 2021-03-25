@@ -1,0 +1,45 @@
+{{ form_start(form) }}
+    <table>
+        <tr>
+            <td>Quel est votre objectif?</td>
+            <td> {{ form_widget(form.ojectif) }}</td>
+        </tr>
+        <tr>
+            <td>Est ce que vous avez des anciennes blessures?</td>
+            <td> {{ form_widget(form.blessure) }}</td>
+        </tr>
+        <tr>
+            <td>Est ce qu'il y a quelques aliments ou substances alimentaires que vous ne mangez pas?</td>
+            <td> {{ form_widget(form.mangezpas) }}</td>
+        </tr>
+        <tr>
+            <td>Est ce que vous avez ou pouvez consommer un supplément alimentaire?</td>
+            <td> {{ form_widget(form.supplementali) }}</td>
+        </tr>
+
+        <tr>
+            <td>Est ce que vous etes diabétiques, asthmatiques, problème cardio vasculaire, ligamentaire, osseux, ...?</td>
+            <td> {{ form_widget(form.probleme) }}</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td> {{ form_widget(form.age) }}</td>
+        </tr>
+        <tr>
+            <td>Taille</td>
+            <td> {{ form_widget(form.taille) }}</td>
+        </tr>
+        <tr>
+            <td>Poids</td>
+            <td> {{ form_widget(form.poids) }}</td>
+        </tr>
+        <tr>
+            <td>Sexe</td>
+            <td> {{ form_widget(form.sexe) }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btn">{{ button_label|default('Enregistrer') }}</button></td>
+        </tr>
+    </table>
+{{ form_end(form) }}

@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gym Template">
+    <meta name="keywords" content="Gym, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gym | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/flaticon.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/barfiller.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/slicknav.min.cs') }}s" type="text/css">
+    <link rel="stylesheet" href="{{ asset('theme_frontend/css/style.css') }}" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="canvas-search search-switch">
+        <i class="fa fa-search"></i>
+    </div>
+    <nav class="canvas-menu mobile-menu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about-us.html">About Us</a></li>
+            <li><a href="./class-details.html">Classes</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./team.html">Our Team</a></li>
+            <li><a href="#">Pages</a>
+                <ul class="dropdown">
+                    <li><a href="./about-us.html">About us</a></li>
+                    <li><a href="./class-timetable.html">Classes timetable</a></li>
+                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
+                    <li><a href="./team.html">Our team</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./blog.html">Our blog</a></li>
+                    <li><a href="./404.html">404</a></li>
+                </ul>
+            </li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="canvas-social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-youtube-play"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="{{ asset('theme_frontend/img/logo.png') }}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="nav-menu">
+                    {% include 'bar.html.twig' %}
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="top-option">
+                    <div class="to-search search-switch">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="to-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header End -->
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="{{ asset('theme_frontend/img/breadcrumb-bg.jpg') }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Planning d'entrainement</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Accueil</a>
+                        <a href="#">Profil</a>
+                        <span>Planning d'entrainement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Class Timetable Section Begin -->
+<section class="class-timetable-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <span>TROUVEZ VOTRE TEMPS</span>
+                    <h2></h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="table-controls">
+                    {#<ul>
+                        <li class="active" data-tsfilter="all">All event</li>
+                        <li data-tsfilter="fitness">Fitness tips</li>
+                        <li data-tsfilter="motivation">Motivation</li>
+                        <li data-tsfilter="workout">Workout</li>
+                    </ul>#}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="class-timetable">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                            <th>Samedi</th>
+                            <th>Dimanche</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="class-time">8.00am - 10.00am</td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Lundi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">Modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Lundi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mardi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mardi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mercredi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mercredi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Jeudi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Jeudi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Vendredi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Vendredi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Samedi' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Samedi', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Dimanche' and entrainement.heure==8 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Dimanche', 'heure': '8'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class-time">12.00am - 14.00pm</td>
+                            <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Lundi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Lundi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mardi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mardi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mercredi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mercredi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Jeudi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Jeudi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Vendredi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Vendredi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Samedi' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Samedi', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Dimanche' and entrainement.heure==12 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Dimanche', 'heure': '12'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class-time">16.00pm - 18.00pm</td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Lundi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Lundi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mardi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mardi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mercredi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mercredi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Jeudi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Jeudi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Vendredi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Vendredi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Samedi' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Samedi', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Dimanche' and entrainement.heure==16 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Dimanche', 'heure': '16'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="class-time">20.00pm - 22.00pm</td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Lundi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Lundi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mardi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mardi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Mercredi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Mercredi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Jeudi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Jeudi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Vendredi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Vendredi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Samedi' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Samedi', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                {% set verif=false %}
+                                {% for entrainement in entrainements %}
+                                    {% if entrainement.jour=='Dimanche' and entrainement.heure==20 %}
+                                        {% set verif=true %}
+                                        <h5>{{ entrainement.titre }}</h5>
+                                        <span>{{ entrainement.type }}</span>
+                                        {% if entrainement.coach.user.id == app.user.id %}
+                                            <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if verif == false %}
+                                    {% if is_granted("ROLE_COACH") %}
+                                        <h5><a href="{{ path('entrainement_new', {'jour': 'Dimanche', 'heure': '20'}) }}" style="font-size: 30px">Ajouter</a></h5>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Class Timetable Section End -->
+
+<!-- Get In Touch Section Begin -->
+<div class="gettouch-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="gt-text">
+                    <i class="fa fa-map-marker"></i>
+                    <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gt-text">
+                    <i class="fa fa-mobile"></i>
+                    <ul>
+                        <li>125-711-811</li>
+                        <li>125-668-886</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gt-text email">
+                    <i class="fa fa-envelope"></i>
+                    <p>Support.gymcenter@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Get In Touch Section End -->
+
+<!-- Footer Section Begin -->
+<section class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="fs-about">
+                    <div class="fa-logo">
+                        <a href="#"><img src="{{ asset('theme_frontend/img/logo.png') }}" alt=""></a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore dolore magna aliqua endisse ultrices gravida lorem.</p>
+                    <div class="fa-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa  fa-envelope-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="fs-widget">
+                    <h4>Useful links</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="fs-widget">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">Subscribe</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fs-widget">
+                    <h4>Tips & Guides</h4>
+                    <div class="fw-recent">
+                        <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
+                        <ul>
+                            <li>3 min read</li>
+                            <li>20 Comment</li>
+                        </ul>
+                    </div>
+                    <div class="fw-recent">
+                        <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a></h6>
+                        <ul>
+                            <li>3 min read</li>
+                            <li>20 Comment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="copyright-text">
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer Section End -->
+
+<!-- Search model Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script src="{{ asset('theme_frontend/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/jquery.barfiller.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/jquery.slicknav.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('theme_frontend/js/main.js') }}"></script>
+
+
+
+</body>
+
+</html>
+
+{#
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+% extends 'base_front.html.twig' %}
+{% block body %}
+    <h1>Liste des Entrainements </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Jour</th>
+                <th>Heure</th>
+                <th>Periode</th>
+                <th>Intensite</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entrainement in entrainements %}
+            <tr>
+                <td>{{ entrainement.id }}</td>
+                <td>{{ entrainement.titre }}</td>
+                <td>{{ entrainement.jour }}</td>
+                <td>{{ entrainement.heure ? entrainement.heure|date('H:i:s') : '' }}</td>
+                <td>{{ entrainement.periode }}</td>
+                <td>{{ entrainement.intensite }}</td>
+                <td>
+                    <a href="{{ path('entrainement_show', {'id': entrainement.id}) }}"class="btn btn-success">afficher</a>
+                </td>
+                <td>
+                    {% if entrainement.coach.user.id == app.user.id %}
+                        <a href="{{ path('entrainement_edit', {'id': entrainement.id}) }}"class="btn btn-primary">modifier</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('entrainement_new') }}">Ajout entrainement</a>
+{% endblock %}
+#}

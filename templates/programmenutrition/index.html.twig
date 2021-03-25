@@ -1,0 +1,44 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Liste des programmes{% endblock %}
+
+{% block body %}
+    <h1>Liste des programmes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Repas1</th>
+                <th>Repas2</th>
+                <th>Repas3</th>
+                <th>Repas4</th>
+                <th>Repas5</th>
+                <th>Duree</th>
+                <th>Jourrepot</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for programmenutrition in programmenutritions %}
+            <tr>
+                <td>{{ programmenutrition.id }}</td>
+                <td>{{ programmenutrition.repas1 }}</td>
+                <td>{{ programmenutrition.repas2 }}</td>
+                <td>{{ programmenutrition.repas3 }}</td>
+                <td>{{ programmenutrition.repas4 }}</td>
+                <td>{{ programmenutrition.repas5 }}</td>
+                <td>{{ programmenutrition.duree }}</td>
+                <td>{{ programmenutrition.jourrepot }}</td>
+                <td>
+                    <a href="{{ path('programmenutrition_show', {'id': programmenutrition.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

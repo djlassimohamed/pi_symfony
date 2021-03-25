@@ -1,0 +1,26 @@
+{% block body %}
+    <h1 align="center">LIste des produits</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Prix</th>
+            <th>Type</th>
+            <th>Labelle</th>
+            <th>Quantite</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.type }}</td>
+                <td>{{ produit.labelle }}</td>
+                <td>{{ produit.quantite }}</td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endblock %}

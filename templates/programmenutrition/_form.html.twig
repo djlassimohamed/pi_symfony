@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+<table>
+    <tr>
+        <td>Repas 1</td>
+        <td> {{ form_widget(form.repas1) }}</td>
+    </tr>
+    <tr>
+        <td>Repas 2</td>
+        <td> {{ form_widget(form.repas2) }}</td>
+    </tr>
+    <tr>
+        <td>Repas 3</td>
+        <td> {{ form_widget(form.repas3) }}</td>
+    </tr>
+    <tr>
+        <td>Repas 4</td>
+        <td> {{ form_widget(form.repas4) }}</td>
+    </tr>
+
+    <tr>
+        <td>Repas 5</td>
+        <td> {{ form_widget(form.repas5) }}</td>
+    </tr>
+    <tr>
+        <td>Durée</td>
+        <td> {{ form_widget(form.duree) }}</td>
+    </tr>
+    <tr>
+        <td>Jour(s) de repos</td>
+        <td> {{ form_widget(form.jourrepot) }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button class="btn">{{ button_label|default('Enregistrer') }}</button></td>
+    </tr>
+</table>
+{{ form_end(form) }}

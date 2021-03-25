@@ -1,0 +1,30 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Nutritionniste{% endblock %}
+
+{% block body %}
+    <h1>Nutritionniste</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ nutritionist.id }}</td>
+            </tr>
+            <tr>
+                <th>Régime</th>
+                <td>{{ nutritionist.diet }}</td>
+            </tr>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ nutritionist.salary }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('nutritionist_index') }}" class="btn btn-success">Retour à la liste</a>
+
+    <a href="{{ path('nutritionist_edit', {'id': nutritionist.id}) }}" class="btn btn-primary">Modifier</a>
+
+    {{ include('nutritionist/_delete_form.html.twig') }}
+{% endblock %}
